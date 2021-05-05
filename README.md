@@ -69,7 +69,7 @@ https://github.com/batux/personal_book_library_web_project/blob/master/com.perso
 ![3 - Yazar Ekleme](https://user-images.githubusercontent.com/36698903/117202699-cb577a80-adf6-11eb-89b8-5c56731c1b00.png)
 
 
-**Yazar ekledim ve yazar listesi sayfası**
+**Yazar ekledim ve yazar listesi sayfası** 
 
 ![4 - Yazar Listesi](https://user-images.githubusercontent.com/36698903/117202760-df9b7780-adf6-11eb-8cbb-0bcf5f9dc361.png)
 
