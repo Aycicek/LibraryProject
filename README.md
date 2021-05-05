@@ -5,7 +5,7 @@ Projede kod standartları uygulanmıştır. Birim test içermektedir. Giriş say
 
 # Sunum
 
-https://github.com/batux/personal_book_library_web_project/blob/master/com.personal.book.library/AngularJS_JavaTechnologies.pdf
+[https://github.com/Aycicek/LibraryProject/blob/main/LibraryApp/Proje%20Sunumu.pdf](url)
 
 
 # Proje Kurulum Aşaması:
