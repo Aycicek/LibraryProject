@@ -43,21 +43,23 @@ https://github.com/batux/personal_book_library_web_project/blob/master/com.perso
 
 # Uygulama Ekran Görüntüleri
 
-EER Diyagramı
+**EER Diyagramı**
+
 ![EER Diyagramı](https://user-images.githubusercontent.com/36698903/117201356-3b650100-adf5-11eb-8f97-fedd320266bb.png)
 
-Veri Tabanına 3 adet kullanıcı verisi eklenmiştir. Şifreler Java’da “src/test/java” klasör altında “PasswordGenerator.java” adında dosya ile şifrelenip veri tabanına eklenmiştir.
+
+**Veri Tabanına 3 adet kullanıcı verisi eklenmiştir. Şifreler Java’da “src/test/java” klasör altında “PasswordGenerator.java” adında dosya ile şifrelenip veri tabanına eklenmiştir.**
 
 ![tablo](https://user-images.githubusercontent.com/36698903/117201710-a1518880-adf5-11eb-96a9-46ed36a277ea.png)
 
 
-Kullanıcı giriş ekranı
+**Kullanıcı giriş ekranı**
 
 ![1 - Giriş Ekranı](https://user-images.githubusercontent.com/36698903/117201208-0e185300-adf5-11eb-80e1-e971b1ccd439.png)
 
 
-5.2.	admin kullanıcısı ile giriş yapalım
-[ADMIN] yazısı kullanıcının sahip olduğu yetkilerini gösterir.
+**admin kullanıcısı ile giriş yapalım
+[ADMIN] yazısı kullanıcının sahip olduğu yetkilerini gösterir.**
 
 ![2 - Anasayfa](https://user-images.githubusercontent.com/36698903/117201220-13759d80-adf5-11eb-8594-658de120647d.png)
 
