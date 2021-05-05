@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:if="${book.bookId == 0}">Create New Book</title>
+<title th:unless="${book.bookId == 0}">Edit Book</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body style="background-color: #CFF3EC">
+	<div class="container text-center">
+		<br> <br>
+		<div th:if="${book.bookId == 0}">
+			<h1>New Book Add</h1>
+		</div>
+		<div th:unless="${book.bookId == 0}">
+			<h1>Edit Book</h1>
+		</div>
+		<form th:action="@{/books/save}" th:object="${book}" method="post"
+			style="max-width: 600px; margin: 0 auto;">
+			<input type="hidden" th:field="*{bookId}" th:value="${book.bookId}" />
+			<div class="m-3" style="text-align: left">
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">Book Name:</label>
+				</div>
+				<div class="col-sm-8">
+					<input type="text" th:field="*{bookName}" class="form-control"
+						required pattern="^\w+([\w ]*\w)*$"></input>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">Book Sub Name:</label>
+				</div>
+				<div class="col-sm-8">
+					<input type="text" th:field="*{subName}" class="form-control"
+						 pattern="^\w+([\w ]*\w)*$"></input>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">Author Name:</label>
+				</div>
+				<div class="col-sm-8">
+					<select th:field="*{author}" class="form-control" required>
+						<th:block th:each="author : ${listAuthors}">
+							<option value="" selected hidden>Choose a Author</option>
+							<option th:text="${author.authorName}"
+								th:value="${author.authorId}" />
+						</th:block>
+					</select>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">Publisher:</label>
+				</div>
+				<div class="col-sm-8">
+					<select th:field="*{publisher}" class="form-control" >
+						<th:block th:each="publisher : ${listPublishers}">
+							<option value="" selected hidden>Choose a Publisher</option>
+							<option th:text="${publisher.publisherName}"
+								th:value="${publisher.publisherId}" />
+						</th:block>
+					</select>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">Number Of Page:</label>
+				</div>
+				<div class="col-sm-8">
+					<input type="number" min="0" th:field="*{numberOfPage}"
+						class="form-control" required></input>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">Serial Name:</label>
+				</div>
+				<div class="col-sm-8">
+					<input type="text" th:field="*{serialName}" class="form-control"></input>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">ISBN Number:</label>
+				</div>
+				<div class="col-sm-8">
+					<input type="text" th:field="*{isbnNo}" class="form-control"
+						minlength="13" maxlength="13"
+						onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"
+						oninput="this.setCustomValidity('')"></input>
+				</div>
+				<div class="form-group row">
+					<label class="col-form-label col-sm-4">How Many Star:</label>
+				</div>
+				<div class="col-sm-8">
+					<input type="number" min="0" max="5" th:field="*{howManyStar}"
+						class="form-control" required pattern="^\w+([\w ]*\w)*$"></input>
+				</div>
+				<div class="text-center p-3">
+					<button type="submit" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

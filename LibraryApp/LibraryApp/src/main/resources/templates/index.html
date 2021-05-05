@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>Library HomePage</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body style="background-color: #CFF3EC">
+	<div class="container text-center">
+		<div sec:authorize="isAuthenticated()">
+			<h1>
+				Welcome <b><span sec:authentication="name">Username</span></b>
+			</h1>
+			<h4>
+				<i> <span sec:authentication="principal.authorities">Roles</span>
+				</i>
+			</h4>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="Logout" />
+			</form>
+
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/authors}">List Authors</a>
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/authors/new}">Create Author</a>
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/publishers}">List Publishers</a>
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/publishers/new}">Create Publisher</a>
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/books}">List Books</a>
+		</div>
+		<div class="p-2">
+			<a class="h2" th:href="@{/books/new}">Create Book</a>
+		</div>
+	</div>
+</body>
+</html>

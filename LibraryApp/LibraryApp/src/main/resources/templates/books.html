@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>List Books</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body style="background-color: #CFF3EC">
+	<div class="container">
+		<br> <br>
+		<h1>Book List</h1>
+		<br>
+		<h1 style="color: #005578">Total Number Of Books : [[${count}]]</h1>
+		<br>
+		<form class="form-inline my-2 my-lg-0"
+			th:action="@{/showSearchResult}" method="POST">
+			<input class="form-control mr-sm-4" name="searchWord" id="searchWord"
+				th:value="*{searchWord}" type="text"
+				placeholder="Book Name, Author, Publisher, ISBN..." aria-label="Search"
+				size="34px" required pattern="^\w+([\w ]*\w)*$">
+			<button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	</div>
+	<br>
+	<div class=" container text-center ">
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>ID</th>
+					<th>Book Name</th>
+					<th>Book Sub Name</th>
+					<th>Author Name</th>
+					<th>Publisher</th>
+					<th>Number of Page</th>
+					<th>Serial Name</th>
+					<th>ISBN Number</th>
+					<th>How Many Star</th>
+					<th sec:authorize="hasAnyAuthority('ADMIN', 'EDITOR')">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<th:block th:each="book: ${listBooks}">
+					<tr>
+						<td th:text="${book.bookId}"></td>
+						<td th:text="${book.bookName}"></td>
+						<td th:text="${book.subName}"></td>
+						<td th:text="${book.author.authorName}"></td>
+						<td th:text="${book.publisher.publisherName}"></td>
+						<td th:text="${book.numberOfPage}"></td>
+						<td th:text="${book.serialName}"></td>
+						<td style="width: 50px" th:text="${book.isbnNo}"></td>
+						<td th:text="${book.howManyStar}"></td>
+						<td style="width: 100px"
+							sec:authorize="hasAnyAuthority('ADMIN', 'EDITOR')"><a
+							style="width: 70px" th:href="@{'/books/edit/' + ${book.bookId}}"
+							class="btn btn-info"> <i class="fas fa-edit"></i> Edit
+						</a> 
+						<a style="width: 70px; margin-top:5px" sec:authorize="hasAnyAuthority('ADMIN')"
+							th:href="@{'/books/delete/' + ${book.bookId}}"
+							class="btn btn-danger"><i class="fas fa-trash-alt"></i>
+								Delete</a></td>
+					</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
