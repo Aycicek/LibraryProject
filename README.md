@@ -1,10 +1,2 @@
 # LibraryProject
-Proje Kurulum Aşaması
-1.Bilgisayarda MYSQL kurulu olmalı
-  2.Veri tabanı **"veritabani.sql"** adlı dosyadan oluşturulması gerekiyor.
-  3.Proje Eclipse üzerinden çalışmaktadır.
-  4.Eclipse’de açılan projenin **"application.properties"** dosyasında aşağıdaki bilgileri MYSQL kullanıcı adı ve şifresi ile doldurulur.
-        **server.port=2324
-        spring.datasource.username= "kullanıcı adı"
-        spring.datasource.password= "şifre"**
-  5.LibraryAppApplication.java dosyasına **"Run As > Java Application"** diyerek proje çalıştırılır.
+Projede kod standartları uygulanmıştır. Birim test içermektedir. Giriş sayfası mevcuttur. Kullanıcılara göre yetkilendirme mekanizması içermektedir. Veri girişlerinde kontrol mekanizması vardır. Boş geçilemez veya eksik girildi diye uyarılar vermektedir. Veri girişlerinde Türkçe karakter kullanılmamalıdır. Author (Yazar) sınıfı için Birim testler uygulanmıştır.
